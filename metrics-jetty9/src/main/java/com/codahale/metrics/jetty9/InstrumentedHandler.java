@@ -247,7 +247,8 @@ public class InstrumentedHandler extends HandlerWrapper {
 
             if (state.isSuspended()) {
                 if (state.isInitial()) {
-                    state.addListener(listener);
+                    // state.addListener(listener);
+                    listener.onStartAsync(state.getAsyncContextEvent());
                 }
                 activeSuspended.inc();
             } else if (state.isInitial()) {
